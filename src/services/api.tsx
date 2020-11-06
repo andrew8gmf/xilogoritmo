@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://localhost:3333"
+  baseURL: "https://xilogoritmo-api.herokuapp.com/"
 });
 
 export default api;
