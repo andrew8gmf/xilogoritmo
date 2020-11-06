@@ -6,16 +6,33 @@ import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
 export default function ObrasView({ route, navigation }) {
-  const { cordel_id } = route.params;
+  const { 
+    cordel_transcrição,
+    cordel_titulo,
+    cordel_descrição,
+    cordel_autor,
+    cordel_tema,
+    cordel_palavrasChave,
+    cordel_numDeFolhas,
+    cordel_tecnicaDeRegistro,
+    cordel_observacoes,
+    cordel_codigoDeReferencia,
+    cordel_unidadeDeArmanezamento,
+    cordel_generoDocumental,
+    cordel_especieDocumental,
+    cordel_suporte,
+    cordel_localidade,
+    cordel_data,
+    cordel_idioma,
+    cordel_cromia,
+    cordel_notasDePesquisa,
+    cordel_tecnicasDeGravura,
+  } = route.params;
 
   const { navigate } = useNavigation();
 
   function handleNavigateToBack(){
     navigate('Obras')
-  }
-
-  function handleNavigateToNext(){
-    navigate('Metadados')
   }
 
   return (
@@ -28,7 +45,29 @@ export default function ObrasView({ route, navigation }) {
           <Feather name="arrow-left" size={50} color="black" />
         </RectButton>
         <RectButton 
-          onPress={handleNavigateToNext}
+          onPress={() => {
+            navigation.navigate('Metadados', { 
+              cordel_titulo,
+              cordel_descrição,
+              cordel_autor,
+              cordel_tema,
+              cordel_palavrasChave,
+              cordel_numDeFolhas,
+              cordel_tecnicaDeRegistro,
+              cordel_observacoes,
+              cordel_codigoDeReferencia,
+              cordel_unidadeDeArmanezamento,
+              cordel_generoDocumental,
+              cordel_especieDocumental,
+              cordel_suporte,
+              cordel_localidade,
+              cordel_data,
+              cordel_idioma,
+              cordel_cromia,
+              cordel_notasDePesquisa,
+              cordel_tecnicasDeGravura,
+            });
+          }}
           style={styles.buttonMetadados}>
           <Text style={styles.metadadosTitle}>METADADOS</Text>
         </RectButton>
@@ -41,16 +80,7 @@ export default function ObrasView({ route, navigation }) {
         <ScrollView>
           <Image style={styles.infoImage} source={require('../../assets/Image-Solid.png')} />
           <Text style={styles.infoText}>
-          Alèrta rapaziada,{"\n"}
-          P'ra pegar no pàu furado!{"\n"}
-          Que agora ou tudo è soldado,{"\n"}
-          Ou a guerra está pegada:{"\n"}
-          O eiercito e a armada Metem-nos em arrodeio;{"\n"}
-          E' medonho a bombardeio!{"\n"}
-          Eo governo è quem vence!{"\n"}
-          Em se livrar ninguem pense; Vai tudo para o sorteio! {"\n"}
-          {"\n"}
-          Prezidentes Conselheiros, Ministros e Senadôres, Condes, Dezembargadôres, Pilôtos e Marinheiros, De indústria os cavalheiros Hão de rodar como veio!... 
+          {cordel_transcrição}
           </Text>
         </ScrollView>
       </View>

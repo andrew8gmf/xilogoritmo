@@ -30,10 +30,33 @@ export default function Obras({ navigation }) {
         {cordeis.map(cordel => (
           <RectButton 
             onPress={() => {
-              navigation.navigate('ObrasView', { cordel_id: cordel._id });
+              navigation.navigate('ObrasView', { 
+                //ObrasView
+                cordel_transcrição: cordel.transcrição,
+                //Metadados
+                cordel_titulo: cordel.título,
+                cordel_descrição: cordel.descrição,
+                cordel_autor: cordel.autor,
+                cordel_tema: cordel.tema,
+                cordel_palavrasChave: cordel.palavrasChave,
+                cordel_numDeFolhas: cordel.númDeFolhas,
+                cordel_tecnicaDeRegistro: cordel.técnicaDeRegistro,
+                cordel_observacoes: cordel.observações,
+                cordel_codigoDeReferencia: cordel.códigoDeReferência,
+                cordel_unidadeDeArmanezamento: cordel.unidadeDeArmazenamento,
+                cordel_generoDocumental: cordel.gêneroDocumental,
+                cordel_especieDocumental: cordel.espécieDocumental,
+                cordel_suporte: cordel.suporte,
+                cordel_localidade: cordel.localidade,
+                cordel_data: cordel.data,
+                cordel_idioma: cordel.idioma,
+                cordel_cromia: cordel.cromia,
+                cordel_notasDePesquisa: cordel.notasDePesquisa,
+                cordel_tecnicasDeGravura: cordel.técnicasDeGravura
+              });
             }}
             style={styles.info}>
-            <Text style={styles.infoText}>{cordel.Título}</Text>
+            <Text style={styles.infoText}>{cordel.título}</Text>
           </RectButton>
         ))}
       </ScrollView>
@@ -66,7 +89,7 @@ const styles = StyleSheet.create({
   info: {
     backgroundColor: '#fff',
     width: '80%',
-    height: 50,
+    padding: 20,
     marginTop: '6%',
     borderRadius: 8,
     alignSelf: 'center',
