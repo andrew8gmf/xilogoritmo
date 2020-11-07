@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, Text, View, Image, SafeAreaView, ActivityIndicator } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
 import api from '../../services/api';
@@ -9,10 +8,12 @@ import api from '../../services/api';
 export default function Obras({ navigation }) {
 
   const [cordeis, setCordeis] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   async function fetchData() {
     await api.get('/index').then(response => {
       setCordeis(response.data);
+      setLoading(false)
     });
   }
 
@@ -20,50 +21,70 @@ export default function Obras({ navigation }) {
     fetchData();
   });
 
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.boxTitle}>
-        <Image style={styles.titlePage} source={require('../../assets/Obras.png')} />
-      </View>
-      <ScrollView style={styles.scrollArea}>
-        {cordeis.map(cordel => (
-          <RectButton 
-            onPress={() => {
-              navigation.navigate('ObrasView', { 
-                //ObrasView
-                cordel_transcrição: cordel.transcrição,
-                //Metadados
-                cordel_titulo: cordel.título,
-                cordel_descrição: cordel.descrição,
-                cordel_autor: cordel.autor,
-                cordel_tema: cordel.tema,
-                cordel_palavrasChave: cordel.palavrasChave,
-                cordel_numDeFolhas: cordel.númDeFolhas,
-                cordel_tecnicaDeRegistro: cordel.técnicaDeRegistro,
-                cordel_observacoes: cordel.observações,
-                cordel_codigoDeReferencia: cordel.códigoDeReferência,
-                cordel_unidadeDeArmanezamento: cordel.unidadeDeArmazenamento,
-                cordel_generoDocumental: cordel.gêneroDocumental,
-                cordel_especieDocumental: cordel.espécieDocumental,
-                cordel_suporte: cordel.suporte,
-                cordel_localidade: cordel.localidade,
-                cordel_data: cordel.data,
-                cordel_idioma: cordel.idioma,
-                cordel_cromia: cordel.cromia,
-                cordel_notasDePesquisa: cordel.notasDePesquisa,
-                cordel_tecnicasDeGravura: cordel.técnicasDeGravura
-              });
-            }}
-            style={styles.info}>
-            <Text style={styles.infoText}>{cordel.título}</Text>
-          </RectButton>
-        ))}
-      </ScrollView>
-      <Image style={styles.footerImage} source={require('../../assets/Image-2.png')} />
-      <StatusBar style="auto" />
-    </SafeAreaView>
-  );
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.boxTitle}>
+          <Image style={styles.titlePage} source={require('../../assets/Obras.png')} />
+        </View>
+        <ScrollView style={styles.scrollArea}>
+          <View style={styles.loadArea}>
+            <ActivityIndicator
+              size="large"
+              color="#000000"
+            />
+            <Text style={styles.loadText}>Aguarde, carregando os dados da aplicação ...</Text>
+          </View>
+        </ScrollView>
+        <Image style={styles.footerImage} source={require('../../assets/Image-2.png')} />
+        <StatusBar style="auto" />
+      </SafeAreaView>
+    )
+  } else {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.boxTitle}>
+          <Image style={styles.titlePage} source={require('../../assets/Obras.png')} />
+        </View>
+        <ScrollView style={styles.scrollArea}>
+          {cordeis.map(cordel => (
+            <RectButton 
+              onPress={() => {
+                navigation.navigate('ObrasView', { 
+                  //ObrasView
+                  cordel_transcrição: cordel.transcrição,
+                  //Metadados
+                  cordel_titulo: cordel.título,
+                  cordel_descrição: cordel.descrição,
+                  cordel_autor: cordel.autor,
+                  cordel_tema: cordel.tema,
+                  cordel_palavrasChave: cordel.palavrasChave,
+                  cordel_numDeFolhas: cordel.númDeFolhas,
+                  cordel_tecnicaDeRegistro: cordel.técnicaDeRegistro,
+                  cordel_observacoes: cordel.observações,
+                  cordel_codigoDeReferencia: cordel.códigoDeReferência,
+                  cordel_unidadeDeArmanezamento: cordel.unidadeDeArmazenamento,
+                  cordel_generoDocumental: cordel.gêneroDocumental,
+                  cordel_especieDocumental: cordel.espécieDocumental,
+                  cordel_suporte: cordel.suporte,
+                  cordel_localidade: cordel.localidade,
+                  cordel_data: cordel.data,
+                  cordel_idioma: cordel.idioma,
+                  cordel_cromia: cordel.cromia,
+                  cordel_notasDePesquisa: cordel.notasDePesquisa,
+                  cordel_tecnicasDeGravura: cordel.técnicasDeGravura
+                });
+              }}
+              style={styles.info}>
+              <Text style={styles.infoText}>{cordel.título}</Text>
+            </RectButton>
+          ))}
+        </ScrollView>
+        <Image style={styles.footerImage} source={require('../../assets/Image-2.png')} />
+        <StatusBar style="auto" />
+      </SafeAreaView>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -85,6 +106,18 @@ const styles = StyleSheet.create({
   },
   scrollArea: {
     width: '100%',
+  },
+  loadArea: {
+    width: "50%",
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "40%",
+  },
+  loadText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center"
   },
   info: {
     backgroundColor: '#fff',
