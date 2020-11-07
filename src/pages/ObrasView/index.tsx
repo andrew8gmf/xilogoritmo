@@ -73,7 +73,7 @@ export default function ObrasView({ route, navigation }) {
         </RectButton>
       </View>
       <View style={styles.boxTitle}>
-        <Text style={styles.titlePage}>O Sorteio Obrigatório</Text>
+        <Text style={styles.titlePage}>{cordel_titulo}</Text>
         <View style={styles.line}/>
       </View>
       <View style={styles.info}>
