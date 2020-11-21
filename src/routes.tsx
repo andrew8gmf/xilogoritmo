@@ -4,9 +4,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Landing from './pages/Landing';
 import ObrasChoice from './pages/ObrasChoice';
+
 import Obras from './pages/Obras';
 import ObrasInfo from './pages/ObrasInfo';
-import Metadata from './pages/Metadata';
+import ObrasMetadata from './pages/ObrasMetadata';
+
+import ObrasCreated from './pages/ObrasCreated';
+import ObrasCreatedInfo from './pages/ObrasCreatedInfo';
+import ObrasCreatedMetadata from './pages/ObrasCreatedMetadata';
 
 const AppStack = createStackNavigator();
 
@@ -23,9 +28,14 @@ const Routes = () => {
       >
         <AppStack.Screen name="Landing" component={Landing}/>
         <AppStack.Screen name="ObrasChoice" component={ObrasChoice}/>
+
         <AppStack.Screen name="Obras" component={Obras}/>
         <AppStack.Screen name="ObrasInfo" component={ObrasInfo}/>
-        <AppStack.Screen name="Metadata" component={Metadata}/>
+        <AppStack.Screen name="ObrasMetadata" component={ObrasMetadata}/>
+
+        <AppStack.Screen name="ObrasCreated" component={ObrasCreated}/>
+        <AppStack.Screen name="ObrasCreatedInfo" component={ObrasCreatedInfo}/>
+        <AppStack.Screen name="ObrasCreatedMetadata" component={ObrasCreatedMetadata}/>
       </AppStack.Navigator>
     </NavigationContainer>
   );

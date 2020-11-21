@@ -17,11 +17,15 @@ export default function ObrasChoice() {
                 <RectButton 
                     style={styles.info}
                     onPress={() => { 
-                        navigate('Obras');
+                      navigate('Obras');
                     }}>
                     <Text style={styles.infoText}>Originais</Text>
                 </RectButton>    
-                <RectButton style={styles.info}>
+                <RectButton 
+                  style={styles.info}
+                  onPress={() => { 
+                    navigate('ObrasCreated');
+                  }}>
                     <Text style={styles.infoText}>Comunidade</Text>
                 </RectButton>
             </View>

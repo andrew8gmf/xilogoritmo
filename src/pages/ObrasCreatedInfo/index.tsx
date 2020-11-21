@@ -5,34 +5,17 @@ import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
-export default function ObrasInfo({ route, navigation }) {
+export default function ObrasCreatedInfo({ route, navigation }) {
   const { 
-    cordel_transcrição,
     cordel_titulo,
-    cordel_descrição,
-    cordel_autor,
-    cordel_tema,
-    cordel_palavrasChave,
-    cordel_numDeFolhas,
-    cordel_tecnicaDeRegistro,
-    cordel_observacoes,
-    cordel_codigoDeReferencia,
-    cordel_unidadeDeArmanezamento,
-    cordel_generoDocumental,
-    cordel_especieDocumental,
-    cordel_suporte,
-    cordel_localidade,
-    cordel_data,
-    cordel_idioma,
-    cordel_cromia,
-    cordel_notasDePesquisa,
-    cordel_tecnicasDeGravura,
+    cordel_texto,
+    cordel_autor
   } = route.params;
 
   const { navigate } = useNavigation();
 
   function handleNavigateToBack() {
-    navigate('Obras')
+    navigate('ObrasCreated')
   }
 
 
@@ -47,26 +30,10 @@ export default function ObrasInfo({ route, navigation }) {
         </RectButton>
         <RectButton
           onPress={() => {
-            navigation.navigate('ObrasMetadata', {
+            navigation.navigate('ObrasCreatedMetadata', {
               cordel_titulo,
-              cordel_descrição,
-              cordel_autor,
-              cordel_tema,
-              cordel_palavrasChave,
-              cordel_numDeFolhas,
-              cordel_tecnicaDeRegistro,
-              cordel_observacoes,
-              cordel_codigoDeReferencia,
-              cordel_unidadeDeArmanezamento,
-              cordel_generoDocumental,
-              cordel_especieDocumental,
-              cordel_suporte,
-              cordel_localidade,
-              cordel_data,
-              cordel_idioma,
-              cordel_cromia,
-              cordel_notasDePesquisa,
-              cordel_tecnicasDeGravura,
+              cordel_texto,
+              cordel_autor
             });
           }}
           style={styles.buttonMetadados}>
@@ -84,7 +51,7 @@ export default function ObrasInfo({ route, navigation }) {
         <ScrollView>
           <Image style={styles.infoImage} source={require('../../assets/Image-Solid.png')} />
           <Text style={styles.infoText}>
-            {cordel_transcrição}
+            {cordel_texto}
           </Text>
         </ScrollView>
       </View>
@@ -96,7 +63,7 @@ export default function ObrasInfo({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#82AEF0',
+    backgroundColor: '#F3B490',
     alignItems: 'center',
   },
   lineTop: {
