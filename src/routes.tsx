@@ -3,8 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Landing from './pages/Landing';
+import ObrasChoice from './pages/ObrasChoice';
 import Obras from './pages/Obras';
-import ObrasView from './pages/ObrasView';
+import ObrasInfo from './pages/ObrasInfo';
 import Metadados from './pages/Metadados';
 
 const AppStack = createStackNavigator();
@@ -21,8 +22,9 @@ const Routes = () => {
         }}
       >
         <AppStack.Screen name="Landing" component={Landing}/>
+        <AppStack.Screen name="ObrasChoice" component={ObrasChoice}/>
         <AppStack.Screen name="Obras" component={Obras}/>
-        <AppStack.Screen name="ObrasView" component={ObrasView}/>
+        <AppStack.Screen name="ObrasInfo" component={ObrasInfo}/>
         <AppStack.Screen name="Metadados" component={Metadados}/>
       </AppStack.Navigator>
     </NavigationContainer>

@@ -31,7 +31,7 @@ export default function Metadados({ route, navigation }) {
   const { navigate } = useNavigation();
 
   function handleNavigateToBack(){
-    navigate('ObrasView')
+    navigate('ObrasInfo')
   }
 
   return (

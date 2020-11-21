@@ -5,9 +5,8 @@ import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
-
-export default function ObrasView({ route, navigation }) {
-  const {
+export default function ObrasInfo({ route, navigation }) {
+  const { 
     cordel_transcrição,
     cordel_titulo,
     cordel_descrição,

@@ -15,7 +15,7 @@ export default function Landing() {
   const { navigate } = useNavigation();
 
   function handleNavigateToNext(){
-    navigate('Obras')
+    navigate('ObrasChoice')
   }
 
   return(
