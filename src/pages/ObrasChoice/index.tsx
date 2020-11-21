@@ -36,14 +36,14 @@ export default function ObrasChoice() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F082DF',
     alignItems: 'center',
+    backgroundColor: '#92F390'
   },
   boxTitle: {
     alignItems: 'center',
     marginTop:'15%',
     marginBottom: '5%',
-    backgroundColor: '#F082DF'
+    backgroundColor: '#92F390'
   },
   titlePage: {
     width: 300,
@@ -70,10 +70,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignSelf: 'center',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   infoText: {
-    fontSize: 18,
+    fontSize: 18
   },
   footerImage: {
     width: 300,
