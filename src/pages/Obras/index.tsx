@@ -11,7 +11,7 @@ export default function Obras({ navigation }) {
   const [loading, setLoading] = useState(true);
 
   async function fetchData() {
-    await api.get('/index').then(response => {
+    await api.get('/cordeis').then(response => {
       setCordeis(response.data);
       setLoading(false)
     });

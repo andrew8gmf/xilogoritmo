@@ -47,7 +47,7 @@ export default function ObrasInfo({ route, navigation }) {
         </RectButton>
         <RectButton
           onPress={() => {
-            navigation.navigate('Metadados', {
+            navigation.navigate('Metadata', {
               cordel_titulo,
               cordel_descrição,
               cordel_autor,

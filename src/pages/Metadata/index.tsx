@@ -5,7 +5,7 @@ import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
-export default function Metadados({ route, navigation }) {
+export default function MetadaDOS({ route, navigation }) {
   const { 
     cordel_titulo,
     cordel_descrição,

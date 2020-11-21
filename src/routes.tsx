@@ -6,7 +6,7 @@ import Landing from './pages/Landing';
 import ObrasChoice from './pages/ObrasChoice';
 import Obras from './pages/Obras';
 import ObrasInfo from './pages/ObrasInfo';
-import Metadados from './pages/Metadados';
+import Metadata from './pages/Metadata';
 
 const AppStack = createStackNavigator();
 
@@ -25,7 +25,7 @@ const Routes = () => {
         <AppStack.Screen name="ObrasChoice" component={ObrasChoice}/>
         <AppStack.Screen name="Obras" component={Obras}/>
         <AppStack.Screen name="ObrasInfo" component={ObrasInfo}/>
-        <AppStack.Screen name="Metadados" component={Metadados}/>
+        <AppStack.Screen name="Metadata" component={Metadata}/>
       </AppStack.Navigator>
     </NavigationContainer>
   );
