@@ -50,8 +50,8 @@ export default function Obras({ navigation }) {
           {cordeis.map(cordel => (
             <RectButton 
               onPress={() => {
-                navigation.navigate('ObrasView', { 
-                  //ObrasView
+                navigation.navigate('ObrasInfo', { 
+                  //ObrasInfo
                   cordel_transcrição: cordel.transcrição,
                   //Metadados
                   cordel_titulo: cordel.título,
