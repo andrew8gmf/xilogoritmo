@@ -31,9 +31,10 @@ export default function ObrasInfo({ route, navigation }) {
 
   const { navigate } = useNavigation();
 
-  function handleNavigateToBack(){
+  function handleNavigateToBack() {
     navigate('Obras')
   }
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,9 +45,9 @@ export default function ObrasInfo({ route, navigation }) {
         >
           <Feather name="arrow-left" size={50} color="black" />
         </RectButton>
-        <RectButton 
+        <RectButton
           onPress={() => {
-            navigation.navigate('Metadados', { 
+            navigation.navigate('Metadados', {
               cordel_titulo,
               cordel_descrição,
               cordel_autor,
@@ -72,15 +73,18 @@ export default function ObrasInfo({ route, navigation }) {
           <Text style={styles.metadadosTitle}>METADADOS</Text>
         </RectButton>
       </View>
+
       <View style={styles.boxTitle}>
-        <Text style={styles.titlePage}>{cordel_titulo}</Text>
-        <View style={styles.line}/>
+        <ScrollView horizontal>
+          <Text style={styles.titlePage}>{cordel_titulo}</Text>
+        </ScrollView>
       </View>
+
       <View style={styles.info}>
         <ScrollView>
           <Image style={styles.infoImage} source={require('../../assets/Image-Solid.png')} />
           <Text style={styles.infoText}>
-          {cordel_transcrição}
+            {cordel_transcrição}
           </Text>
         </ScrollView>
       </View>
@@ -103,39 +107,39 @@ const styles = StyleSheet.create({
     paddingRight: "10%",
     justifyContent: "space-between"
   },
-  buttonNavigation:{
+  buttonNavigation: {
     backgroundColor: '#fff',
-    borderRadius: 100, 
-    marginTop:40,
+    borderRadius: 100,
+    marginTop: 40,
     marginLeft: 10,
-    padding:0,
+    padding: 0,
   },
   buttonMetadados: {
     backgroundColor: '#fff',
-    marginTop:40,
+    marginTop: 40,
     alignSelf: "center",
     justifyContent: "center",
     padding: "2%",
-    borderRadius: 10 
+    borderRadius: 10
   },
   metadadosTitle: {
     fontSize: 18
   },
   boxTitle: {
     alignItems: 'center',
-    marginTop:'25%',
+    marginTop: '25%',
+    width: '70%',
+    paddingVertical: '5%',
+    height: '10%',
+    position: "relative"
   },
   titlePage: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: "600",
     textShadowColor: 'rgba(0, 0, 0, 0.55)',
-    textShadowOffset: {width: -1, height: 1},
-    textShadowRadius: 10
-  },
-  line: {
-    backgroundColor: '#000',
-    height: '2%',
-    width: '80%'
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
+    paddingVertical: '2%'
   },
   info: {
     backgroundColor: '#fff',
