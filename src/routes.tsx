@@ -13,6 +13,8 @@ import ObrasCreated from './pages/ObrasCreated';
 import ObrasCreatedInfo from './pages/ObrasCreatedInfo';
 import ObrasCreatedMetadata from './pages/ObrasCreatedMetadata';
 
+import CreateObras from './pages/CreateObras';
+
 const AppStack = createStackNavigator();
 
 const Routes = () => {
@@ -27,6 +29,7 @@ const Routes = () => {
         }}
       >
         <AppStack.Screen name="Landing" component={Landing}/>
+        <AppStack.Screen name="CreateObras" component={CreateObras}/>
         <AppStack.Screen name="ObrasChoice" component={ObrasChoice}/>
 
         <AppStack.Screen name="Obras" component={Obras}/>
