@@ -5,36 +5,36 @@ import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 export default function ObrasChoice() {
-    const { navigate } = useNavigation();
+  
+  const { navigate } = useNavigation();
 
-    return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.boxTitle}>
-          <Image style={styles.titlePage} source={require('../../assets/Obras.png')} />
-        </View>
-        <View style={styles.infoArea}>
-            <View style={styles.buttonsArea}>
-                <RectButton 
-                    style={styles.info}
-                    onPress={() => { 
-                      navigate('Obras');
-                    }}>
-                    <Text style={styles.infoText}>Originais</Text>
-                </RectButton>    
-                <RectButton 
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.boxTitle}>
+        <Image style={styles.titlePage} source={require('../../assets/Obras.png')} />
+      </View>
+      <View style={styles.infoArea}>
+          <View style={styles.buttonsArea}>
+              <RectButton 
                   style={styles.info}
                   onPress={() => { 
-                    navigate('ObrasCreated');
+                    navigate('Obras');
                   }}>
-                    <Text style={styles.infoText}>Comunidade</Text>
-                </RectButton>
-            </View>
-        </View>
-        <Image style={styles.footerImage} source={require('../../assets/Image-2.png')} />
-        <StatusBar style="auto" />
-      </SafeAreaView>
-    );
-
+                  <Text style={styles.infoText}>Originais</Text>
+              </RectButton>    
+              <RectButton 
+                style={styles.info}
+                onPress={() => { 
+                  navigate('ObrasCreated');
+                }}>
+                  <Text style={styles.infoText}>Comunidade</Text>
+              </RectButton>
+          </View>
+      </View>
+      <Image style={styles.footerImage} source={require('../../assets/Image-2.png')} />
+      <StatusBar style="auto" />
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({

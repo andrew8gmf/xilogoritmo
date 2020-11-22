@@ -18,7 +18,6 @@ export default function ObrasCreatedInfo({ route, navigation }) {
     navigate('ObrasCreated')
   }
 
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.lineTop}>
@@ -130,5 +129,4 @@ const styles = StyleSheet.create({
   infoText: {
     fontSize: 18,
   }
-
 });

@@ -35,7 +35,6 @@ export default function ObrasInfo({ route, navigation }) {
     navigate('Obras')
   }
 
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.lineTop}>
@@ -163,5 +162,4 @@ const styles = StyleSheet.create({
   infoText: {
     fontSize: 18,
   }
-
 });

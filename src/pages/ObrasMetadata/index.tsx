@@ -154,7 +154,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#82AEF0',
-
   },
   buttonNavigation:{
     backgroundColor: '#fff',
@@ -176,7 +175,6 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0, 0, 0, 0.55)',
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10
-
   },
   line: {
     backgroundColor: '#000',
@@ -187,9 +185,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     width: '80%',
     height: '100%',
-    // Aparece todos os cards corretamente
     paddingBottom: '100%',
-
     marginHorizontal: '10%',
     borderTopRightRadius: 14,
     borderTopLeftRadius: 14,
@@ -200,7 +196,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.41,
     shadowRadius: 9.11,
-
     elevation: 14,
   },
   infoCard: {
@@ -209,7 +204,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: 'flex-start',
     padding: 8,
-    // backgroundColor: '#707070'
   },
   titleInfo: {
     marginTop: 0,
@@ -224,7 +218,6 @@ const styles = StyleSheet.create({
   lineData: {
     marginTop: 15,
     marginBottom: 0,
-
     backgroundColor: '#000',
     height: 5,
     width: '100%',

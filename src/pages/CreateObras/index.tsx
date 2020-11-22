@@ -1,14 +1,33 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image, TextInput } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 import logoImg from '../../assets/Logo.png';
 
+import api from '../../services/api';
 
 export default function CreateObra() {
 
-    function handleCreateSubmit() {
+    const {navigate} = useNavigation();
 
+    const [autor, onChangeAutor] = React.useState('');
+    const [titulo, onChangeTitulo] = React.useState('');
+    const [texto, onChangeTexto] = React.useState('');
+
+    async function handleCreateSubmit() {
+        if (!autor || !titulo || !texto) {
+        alert("Preencha todos os dados!" );
+        } else {
+            try {
+                await api.post("/create_cordel", { autor, titulo, texto });
+                alert("Cordel criado com sucesso!");
+                navigate('Landing');
+            } catch (err) {
+                console.log(err);
+                alert("Ocorreu um erro na criação do cordel");
+            }
+        }
     }
 
     return (
@@ -17,16 +36,16 @@ export default function CreateObra() {
             <View style={styles.inputGroup}>
                 <TextInput
                     style={styles.input}
-                    // value={week_day}
-                    // onChangeText={text => setWeekDay(text)}
+                    value={autor}
+                    onChangeText={text => onChangeAutor(text)}
                     placeholder="Autor(a): "
                     placeholderTextColor="#c1bccc"
                 />
 
                 <TextInput
                     style={styles.input}
-                    // value={week_day}
-                    // onChangeText={text => setWeekDay(text)}
+                    value={titulo}
+                    onChangeText={text => onChangeTitulo(text)}
                     placeholder="Título:"
                     placeholderTextColor="#c1bccc"
                 />
@@ -34,8 +53,8 @@ export default function CreateObra() {
             </View>
             <TextInput
                 style={styles.inputTextCordel}
-                // value={week_day}
-                // onChangeText={text => setWeekDay(text)}
+                value={texto}
+                onChangeText={text => onChangeTexto(text)}
                 placeholder="Digite seu texto..."
                 placeholderTextColor="#c1bccc"
                 multiline
