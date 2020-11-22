@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   infoArea: {
     width: '100%',
-    height: '58%',
+    height: '57%',
     justifyContent: "center"
   },
   buttonsArea: {

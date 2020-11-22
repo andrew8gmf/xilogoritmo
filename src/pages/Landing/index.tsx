@@ -1,5 +1,6 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, View, StyleSheet, Image} from 'react-native';
+import { Text, View, StyleSheet, Image, SafeAreaView } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
@@ -15,7 +16,7 @@ export default function Landing() {
   const { navigate } = useNavigation();
 
   return(
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.logoGroup}>
         <Image style={styles.ieb} source={iebImg}/>
         <Image style={styles.logo} source={logoImg}/>
@@ -42,7 +43,8 @@ export default function Landing() {
       <View style={styles.footerGroup}>
         <Image style={styles.cactus} source={cactusImg}/>
       </View>
-    </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
   );
 }
 

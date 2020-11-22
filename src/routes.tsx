@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 
 import Landing from './pages/Landing';
 import ObrasChoice from './pages/ObrasChoice';
@@ -23,9 +23,9 @@ const Routes = () => {
       <AppStack.Navigator 
         headerMode="none"
         screenOptions={{
-          cardStyle: {
-            backgroundColor: '#f0f0f5'
-          }
+          gestureEnabled: true,
+          //gestureDirection: "horizontal",
+          ...TransitionPresets.SlideFromRightIOS
         }}
       >
         <AppStack.Screen name="Landing" component={Landing}/>
