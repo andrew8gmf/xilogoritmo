@@ -14,8 +14,12 @@ export default function Landing() {
 
   const { navigate } = useNavigation();
 
-  function handleNavigateToNext(){
+  function handleNavigateToRead(){
     navigate('ObrasChoice')
+  }
+
+  function handleNavigateToCreate(){
+    navigate('CreateObras')
   }
 
   return(
@@ -27,12 +31,15 @@ export default function Landing() {
       </View> 
       <View style={styles.btnGroup}>
         <RectButton 
-          onPress={handleNavigateToNext}
+          onPress={handleNavigateToRead}
           style={styles.button}>
         <Image style={styles.landingBtn} source={readImg}/>
           <Text style={styles.landingBtnText}>Ler</Text>
         </RectButton>
-        <RectButton style={styles.button}>
+        <RectButton 
+          style={styles.button}
+          onPress={handleNavigateToCreate}
+          >
           <Image style={styles.landingBtn} source={createImg}/>
           <Text style={styles.landingBtnText}>Criar cordel</Text>
         </RectButton>
