@@ -92,6 +92,7 @@ export default function CreateObra() {
         <View style={styles.container}>
             <Image style={styles.logo} source={logoImg} />
             <View style={styles.uploadArea}>
+                {image && <Image source={{ uri: image }} style={styles.uploadImage} />}
                 <RectButton 
                     onPress={pickImage}
                     style={styles.uploadButton} 
@@ -99,7 +100,6 @@ export default function CreateObra() {
                     <Feather name="upload" size={30} color="black"/>
                     <Text>Upload de imagem</Text>
                 </RectButton>
-                {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
             </View>
             <View style={styles.inputGroup}>
                 <TextInput
@@ -239,6 +239,12 @@ const styles = StyleSheet.create({
         width: '80%',
         height: '150%',
         padding: 10,
-        borderRadius: 20
+        borderRadius: 20,
+        opacity: 0.5,
+    },
+    uploadImage: {
+        position: 'absolute',
+        width: 200,
+        height: 130,
     },
 })
