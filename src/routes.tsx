@@ -24,7 +24,6 @@ const Routes = () => {
         headerMode="none"
         screenOptions={{
           gestureEnabled: true,
-          //gestureDirection: "horizontal",
           ...TransitionPresets.SlideFromRightIOS
         }}
       >
