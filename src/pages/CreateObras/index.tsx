@@ -14,15 +14,17 @@ import api from '../../services/api';
 export default function CreateObra() {
 
     const [image, setImage] = useState(null);
+    const [imageFile, setImageFile] = useState({});
+    const [imageUrl, setImageUrl] = useState(null);
 
     const pickImage = async () => {
         if (Platform.OS !== 'web') {
             const { status } = await ImagePicker.requestCameraRollPermissionsAsync();
             if (status !== 'granted') {
-              alert('Sorry, we need camera roll permissions to make this work!');
+              alert('Desculpe, nós precisamos das permissões para fazer isso!');
             } else {
                 let result = await ImagePicker.launchImageLibraryAsync({
-                    mediaTypes: ImagePicker.MediaTypeOptions.All,
+                    mediaTypes: ImagePicker.MediaTypeOptions.Images,
                     allowsEditing: true,
                     aspect: [4, 3],
                     quality: 1,
@@ -32,10 +34,36 @@ export default function CreateObra() {
         
                 if (!result.cancelled) {
                     setImage(result.uri);
+
+                    let newFile = { 
+                        uri:result.uri,
+                        type:`test/${result.uri.split(".")[1]}`,
+                        name:`test.${result.uri.split(".")[1]}` 
+                    }
+
+                    setImageFile(newFile);
                 }  
             }
         }
     };
+
+    async function handleUpload(image) {
+        const data = new FormData()
+        data.append('file',image)
+        data.append('upload_preset','xilogoritmo')
+        data.append('cloud_name','andrew8gmf')
+
+        fetch('https://api.cloudinary.com/v1_1/andrew8gmf/image/upload',{
+            method: "post",
+            body: data
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            setImageUrl(data.url)
+        }).catch(err=>{
+            alert("Erro no upload")
+        })
+    }
     
     const {navigate} = useNavigation();
 
@@ -44,11 +72,12 @@ export default function CreateObra() {
     const [texto, onChangeTexto] = React.useState('');
 
     async function handleCreateSubmit() {
-        if (!autor || !titulo || !texto) {
+        if (!image || !autor || !titulo || !texto) {
         alert("Preencha todos os dados!" );
         } else {
             try {
-                await api.post("/create_cordel", { autor, titulo, texto });
+                await handleUpload(imageFile);
+                await api.post("/create_cordel", { imageUrl, autor, titulo, texto });
                 alert("Cordel criado com sucesso!");
                 navigate('Landing');
             } catch (err) {
