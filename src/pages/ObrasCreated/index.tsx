@@ -52,6 +52,7 @@ export default function ObrasCreated({ navigation }) {
               onPress={() => {
                 navigation.navigate('ObrasCreatedInfo', { 
                   //ObrasCreatedInfo
+                  cordel_imageUrl: cordel.imageUrl,
                   cordel_titulo: cordel.titulo,
                   cordel_texto: cordel.texto,
                   //ObrasCreatedMetadata

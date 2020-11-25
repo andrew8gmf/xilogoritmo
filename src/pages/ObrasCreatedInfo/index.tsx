@@ -7,6 +7,7 @@ import { Feather } from '@expo/vector-icons';
 
 export default function ObrasCreatedInfo({ route, navigation }) {
   const { 
+    cordel_imageUrl,
     cordel_titulo,
     cordel_texto,
     cordel_autor
@@ -48,7 +49,7 @@ export default function ObrasCreatedInfo({ route, navigation }) {
 
       <View style={styles.info}>
         <ScrollView>
-          <Image style={styles.infoImage} source={require('../../assets/Image-Solid.png')} />
+          <Image style={styles.infoImage} source={{ uri:cordel_imageUrl }} />
           <Text style={styles.infoText}>
             {cordel_texto}
           </Text>
@@ -119,8 +120,8 @@ const styles = StyleSheet.create({
     padding: '2%'
   },
   infoImage: {
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
     resizeMode: 'contain',
     alignSelf: 'center',
     marginTop: '5%',
