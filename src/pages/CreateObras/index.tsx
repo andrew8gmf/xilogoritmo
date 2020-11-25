@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Platform, Text, View, StyleSheet, Image, TextInput } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import * as ImagePicker from 'expo-image-picker';
 import { Feather } from '@expo/vector-icons';
@@ -58,6 +59,7 @@ export default function CreateObra() {
     }
 
     return (
+        <KeyboardAwareScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.container}>
             <Image style={styles.logo} source={logoImg} />
             <View style={styles.uploadArea}>
@@ -105,16 +107,21 @@ export default function CreateObra() {
             </RectButton>
 
         </View>
+        </KeyboardAwareScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        height: '100%',
         alignItems: 'center',
         alignContent: 'center',
         justifyContent: 'center',
         backgroundColor: '#F0EC82'
+    },
+    scrollContainer: {
+        flexGrow: 1
     },
     logo: {
         marginTop: '10%',
