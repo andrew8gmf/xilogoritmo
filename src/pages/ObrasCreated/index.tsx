@@ -36,17 +36,17 @@ export default function ObrasCreated({ navigation }) {
             <Text style={styles.loadText}>Aguarde, carregando os dados da aplicação ...</Text>
           </View>
         </ScrollView>
-        <Image style={styles.footerImage} source={require('../../assets/Image-2.png')} />
+        <Image style={styles.footerImage} source={require('../../assets/cantadores.png')} />
         <StatusBar style="auto" />
       </SafeAreaView>
     )
   } else {
     return (
       <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.scrollArea}>
         <View style={styles.boxTitle}>
           <Image style={styles.titlePage} source={require('../../assets/Obras.png')} />
         </View>
-        <ScrollView style={styles.scrollArea}>
           {cordeis.map(cordel => (
             <RectButton 
               onPress={() => {
@@ -63,9 +63,9 @@ export default function ObrasCreated({ navigation }) {
               <Text style={styles.infoText}>{cordel.titulo}</Text>
             </RectButton>
           ))}
+          <Image style={styles.footerImage} source={require('../../assets/cantadores.png')} />
         </ScrollView>
-        <Image style={styles.footerImage} source={require('../../assets/Image-2.png')} />
-        <StatusBar style="auto" />
+        <StatusBar style="inverted" />
       </SafeAreaView>
     );
   }
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   },
   info: {
     backgroundColor: '#fff',
-    width: '80%',
+    width: '90%',
     padding: 20,
     marginTop: '6%',
     borderRadius: 8,
@@ -117,8 +117,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   footerImage: {
-    width: 300,
-    height: 150,
-    resizeMode: 'contain'
+    width: 350,
+    height: 250,
+    marginLeft: 10,
+    marginTop: 10,
   }
 });

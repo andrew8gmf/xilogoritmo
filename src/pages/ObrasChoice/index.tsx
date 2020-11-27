@@ -20,7 +20,7 @@ export default function ObrasChoice() {
                   onPress={() => { 
                     navigate('Obras');
                   }}>
-                  <Text style={styles.infoText}>Originais</Text>
+                  <Text style={styles.infoText}>Acervo IEB</Text>
               </RectButton>    
               <RectButton 
                 style={styles.info}
@@ -31,7 +31,7 @@ export default function ObrasChoice() {
               </RectButton>
           </View>
       </View>
-      <Image style={styles.footerImage} source={require('../../assets/Image-2.png')} />
+      <Image style={styles.footerImage} source={require('../../assets/forro.png')} />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   info: {
     backgroundColor: '#fff',
-    width: '80%',
+    width: '90%',
     padding: 20,
     marginTop: '6%',
     borderRadius: 8,
@@ -80,8 +80,9 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   footerImage: {
-    width: 300,
-    height: 150,
-    resizeMode: 'contain'
+    width: 350,
+    height: 200,
+    marginTop: -30,
+    marginRight: 15,
   }
 });

@@ -90,7 +90,6 @@ export default function CreateObra() {
     return (
         <KeyboardAwareScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.container}>
-            <Image style={styles.logo} source={logoImg} />
             <View style={styles.uploadArea}>
                 {image && <Image source={{ uri: image }} style={styles.uploadImage} />}
                 <RectButton 
@@ -134,7 +133,6 @@ export default function CreateObra() {
             >
                 <Text style={styles.submitButton}>Criar Cordel</Text>
             </RectButton>
-
         </View>
         </KeyboardAwareScrollView>
     )
@@ -229,7 +227,7 @@ const styles = StyleSheet.create({
     uploadArea: {
         alignItems: 'center', 
         justifyContent: 'center',
-        width: '50%',
+        width: '60%',
         height: '10%',
         padding: 10
     },
