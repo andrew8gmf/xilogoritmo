@@ -18,7 +18,6 @@ export default function Landing() {
   return(
     <SafeAreaView style={styles.container}>
       <View style={styles.logoGroup}>
-        <Image style={styles.ieb} source={iebImg}/>
         <Image style={styles.logo} source={logoImg}/>
         <Image style={styles.slogan} source={sloganImg}/>
       </View> 
@@ -42,6 +41,7 @@ export default function Landing() {
       </View>
       <View style={styles.footerGroup}>
         <Image style={styles.cactus} source={cactusImg}/>
+        <Image style={styles.ieb} source={iebImg}/>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   slogan:{
-    marginTop: '3%',
+    marginTop: '6%',
     width: 350,
     height: 60,
     resizeMode: 'contain'
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   button:{
-    marginTop: '5%',
+    marginTop: '1%',
     marginHorizontal: '5%',
   },
   landingBtn:{
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     marginTop: '10%',
   },
   ieb:{
-    marginTop: '5%',
+    marginTop: '20%',
     marginBottom: '5%',
     width: 150,
     height: 150

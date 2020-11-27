@@ -43,10 +43,10 @@ export default function Obras({ navigation }) {
   } else {
     return (
       <SafeAreaView style={styles.container}>
-        <View style={styles.boxTitle}>
-          <Image style={styles.titlePage} source={require('../../assets/Obras.png')} />
-        </View>
         <ScrollView style={styles.scrollArea}>
+          <View style={styles.boxTitle}>
+            <Image style={styles.titlePage} source={require('../../assets/Obras.png')} />
+          </View>
           {cordeis.map(cordel => (
             <RectButton 
               onPress={() => {
@@ -79,8 +79,8 @@ export default function Obras({ navigation }) {
               <Text style={styles.infoText}>{cordel.título}</Text>
             </RectButton>
           ))}
-        </ScrollView>
         <Image style={styles.footerImage} source={require('../../assets/Image-2.png')} />
+        </ScrollView>
         <StatusBar style="auto" />
       </SafeAreaView>
     );
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   },
   info: {
     backgroundColor: '#fff',
-    width: '80%',
+    width: '90%',
     padding: 20,
     marginTop: '6%',
     borderRadius: 8,
@@ -133,8 +133,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   footerImage: {
-    width: 300,
+    width: 350,
     height: 150,
-    resizeMode: 'contain'
+    marginLeft: 12,
+    marginTop: 20,
   }
 });
