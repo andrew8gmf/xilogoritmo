@@ -75,7 +75,9 @@ export default function Obras({ navigation }) {
                   cordel_tecnicasDeGravura: cordel.técnicasDeGravura
                 });
               }}
-              style={styles.info}>
+              style={styles.info}
+              key={cordel.título}
+              >
               <Text style={styles.infoText}>{cordel.título}</Text>
             </RectButton>
           ))}

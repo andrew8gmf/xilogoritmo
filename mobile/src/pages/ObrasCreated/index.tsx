@@ -59,7 +59,9 @@ export default function ObrasCreated({ navigation }) {
                   cordel_autor: cordel.autor
                 });
               }}
-              style={styles.info}>
+              style={styles.info}
+              key={cordel.titulo}
+              >
               <Text style={styles.infoText}>{cordel.titulo}</Text>
             </RectButton>
           ))}
