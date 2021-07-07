@@ -1,6 +1,6 @@
 <h1 id="title" align="center">👋Welcome to XILOGORITMO</h1>
 
-- 💽 [Download APK](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40felipegnj/Xilogoritmo-631b9a8eabae4bc780b2b1765c552b71-signed.apk)
+- 💽 ~~Download APK~~
 - 🤔 [How To Use](#how-to-use)
 - 🚀 [Technologies](#technologies)
 - 💾 [Minimal Requirements](#minimal-requirements)
