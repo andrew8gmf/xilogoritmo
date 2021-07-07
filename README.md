@@ -1,6 +1,3 @@
-# 2ª fase hackaton Abra-te Código
-Repositório dedicado para a segunda Fase do hackaton Abra-te Código, e o desenvolvimento do aplicativo "Xilogoritmo"
-
 <h1 id="title" align="center">👋Welcome to XILOGORITMO</h1>
 
 - 💽 [Download APK](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40felipegnj/Xilogoritmo-631b9a8eabae4bc780b2b1765c552b71-signed.apk)
@@ -99,6 +96,7 @@ expo start
 
 <h2 id="author">👦👩 Authors</h2>
 
+- 👦 **Andrew Fernandes <andrew8gmf@gmail.com>**
 - 👦 **Augusto Possati <augusto.opossatti@hotmail.com>**
 - 👦 **Felipe Jonas <felipenjonas@gmail.com>**
 - 👩 **Gabriella Feliciano <gabriellafeliciano2@gmail.com>**
@@ -111,7 +109,7 @@ expo start
 
 <h2 id="license">🔏 License</h2>
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Atribuição  4.0 Internacional</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a License <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons - Attribution 4.0 International</a>.
 
 [Back To The Top](#title)
 
